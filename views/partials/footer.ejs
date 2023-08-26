@@ -1,0 +1,16 @@
+<footer class="mt-3 text-center">
+    Copyright &copy; <%= new Date().getFullYear() %>
+</footer>
+<script>
+    var checkboxes = document.querySelectorAll('.todo-check');
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function(){
+            if(this.checked){
+                console.log('check');
+                this.nextElementSibling.classList.add('strikethrough');
+            }else{
+                this.nextElementSibling.classList.remove('strikethrough');
+            }
+        })
+    });
+</script>

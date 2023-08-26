@@ -1,0 +1,28 @@
+<%- include('partials/header.ejs') %>
+<body>
+  <div class="container mt-5">
+    <div class="todo-container">
+      <h2 class="mb-4">My To-Do List</h2>
+      <div class="task-filters">
+        <a href="/" class="task-filter">Personal</a>
+        <a href="/work" class="task-filter active">Work</a>
+      </div>
+      <% if (locals.work) { %>
+        <% work.forEach(element => { %>
+            <div class="todo-item">
+                <input type="checkbox" class="todo-check">
+                <span><%= element %></span>
+            </div>
+        <% }) %>
+      <% } %>
+      <div class="add-task">
+        <form action="/work" method="POST">
+            <input type="text" name="task" class="add-task-input" placeholder="Add a new task...">
+            <button type="submit" class="add-task-btn">Add Task</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <%- include('partials/footer.ejs') %>
+</body>
+</html>

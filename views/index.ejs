@@ -9,9 +9,22 @@
       </div>
       <% if (locals.personal) { %>
         <% personal.forEach(element => { %>
-            <div class="todo-item">
-                <input type="checkbox" class="todo-check">
-                <span><%= element %></span>
+              <% if (element.isDone == 'yes') { %>
+              <div class="todo-item bg-success justify-content-between">
+                <div>
+                  <span class="strikethrough"><%= element.name %></span>
+                </div>
+                <div>
+              <% } else{%>
+              <div class="todo-item justify-content-between">
+                <div>
+                  <span><%= element.name %></span>
+                </div>
+                <div>
+                  <button data-id="<%= element._id %>" class="btn btn-sm btn-success ml-2 btn-done"><i class="fa-solid fa-check"></i></button>
+              <% }%>
+                  <button data-id="<%= element._id %>" class="btn btn-sm btn-danger ml-2 btn-delete"><i class="fa-solid fa-trash"></i></button>
+                </div>
             </div>
         <% }) %>
       <% } %>

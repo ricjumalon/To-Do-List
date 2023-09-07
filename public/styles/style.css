@@ -11,8 +11,13 @@ body {
   .todo-item {
     display: flex;
     align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #d1d1d1;
+    padding: 5px 10px;
+    border: 1px solid #d1d1d1;
+    border-radius: 10px;
+    margin-bottom: 5px;
+  }
+  .todo-item:hover{
+    background-color: #ebebeb;
   }
   .todo-item:last-child {
     border-bottom: none;
@@ -41,6 +46,7 @@ body {
   .task-filters {
     display: flex;
     margin-top: 10px;
+    margin-bottom: 10px;
   }
   .task-filter {
     margin-right: 10px;
@@ -66,5 +72,5 @@ body {
 
   .strikethrough {
     text-decoration: line-through;
-    color: #aaa;
+    color: #ffffff;
   }

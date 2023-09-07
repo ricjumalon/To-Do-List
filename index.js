@@ -10,7 +10,7 @@ const work = [];
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended:true}));
 
-mongoose.connect("mongodb://127.0.0.1:27017/todoListDB");
+mongoose.connect(process.DATABASE_URL || "mongodb://127.0.0.1:27017/todoListDB");
 
 const ItemSchema = new mongoose.Schema({
     name: String,
